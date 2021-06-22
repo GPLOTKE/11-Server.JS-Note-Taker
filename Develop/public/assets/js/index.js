@@ -1,4 +1,4 @@
-const Server = require('./server')
+const server = require('./server');
 
 let noteTitle;
 let noteText;
