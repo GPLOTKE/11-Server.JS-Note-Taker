@@ -1,3 +1,5 @@
+const Server = require('./server')
+
 let noteTitle;
 let noteText;
 let saveNoteBtn;
