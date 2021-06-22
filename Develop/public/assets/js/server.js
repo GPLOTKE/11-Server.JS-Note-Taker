@@ -4,8 +4,7 @@ const inquirer = require('inquirer');
 const http = require('http');
 const app = express();
 const dbJSON = require('./Develop/db/db.json');
-const PORT = 3001;
-
+const PORT = process.env.PORT || 3001;
 app.set('port', (process.env.PORT || 3001));
 
 //For avoidong Heroku $PORT error
@@ -24,7 +23,7 @@ const handleRequest = (request, response) => {
 
 const server = http.createServer(handleRequest);
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log(`Server listening on: http://localhost:${PORT}`);
 });
 
