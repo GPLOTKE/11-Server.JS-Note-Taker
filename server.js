@@ -3,7 +3,7 @@ const fs = require('fs-extra');
 const inquirer = require('inquirer');
 const http = require('http');
 const app = express();
-const dbJSON = require('.');
+const dbJSON = require('./db/db.json');
 const PORT = process.env.PORT || 3001;
 const path = require('path');
 
