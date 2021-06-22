@@ -3,7 +3,7 @@ const fs = require('fs-extra');
 const inquirer = require('inquirer');
 const http = require('http');
 const app = express();
-const dbJSON = require('./Develop/db/db.json');
+const dbJSON = require('.');
 const PORT = process.env.PORT || 3001;
 const path = require('path');
 
@@ -14,6 +14,7 @@ const path = require('path');
 // }).listen(app.get('port'), function() {
 //     console.log('App is running, server is listening on port ', app.get('port'));
 // });
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public')));
