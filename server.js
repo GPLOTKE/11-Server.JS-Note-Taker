@@ -27,5 +27,3 @@ app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, './public/note
 app.listen(PORT, () => {
     console.log(`Server listening on: http://localhost:${PORT}`);
 });
-
-module.exports = server;
