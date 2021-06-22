@@ -2,7 +2,9 @@ const express = require('express');
 const fs = require('fs-extra');
 const inquirer = require('inquirer');
 const http = require('http');
-var app = express();
+const app = express();
+const dbJSON = require('./Develop/db/db.json');
+const PORT = 3001;
 
 app.set('port', (process.env.PORT || 3001));
 
@@ -14,7 +16,7 @@ app.get('/', function(request, response) {
     console.log('App is running, server is listening on port ', app.get('port'));
 });
 
-const PORT = 3001;
+
 
 const handleRequest = (request, response) => {
     response.end(`It Works!! Path Hit: ${request.url}`);
@@ -22,7 +24,6 @@ const handleRequest = (request, response) => {
 
 const server = http.createServer(handleRequest);
 
-// server.listen(process.env.PORT || 3001)
 server.listen(PORT, () => {
     console.log(`Server listening on: http://localhost:${PORT}`);
 });
